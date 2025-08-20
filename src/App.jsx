@@ -87,13 +87,10 @@ const useScrollAnimation = () => {
             const { top, height } = ref.current.getBoundingClientRect();
             const screenHeight = window.innerHeight;
             
-            // FIX: Prevent division by zero if element height is 0 on initial render
             if (height === 0) return;
 
-            // Calculate the visibility progress
             const progress = Math.max(0, Math.min(1, (screenHeight - top) / (height * 0.8)));
 
-            // Update styles based on progress
             setStyle({
                 opacity: progress,
                 transform: `translateY(${50 * (1 - progress)}px)`,
