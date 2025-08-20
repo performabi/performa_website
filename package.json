@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/performabi/performa_website",
+  "homepage": "https://performabi.github.io/performa_website",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
