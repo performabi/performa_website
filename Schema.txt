@@ -1,0 +1,18 @@
+/performa-bi-website
+|-- .github/
+|   |-- workflows/
+|       |-- deploy.yml
+|-- public/
+|   |-- favicon.ico  (Your icon file)
+|-- src/
+|   |-- assets/
+|   |   |-- logo.png (Your logo file)
+|   |-- App.jsx
+|   |-- index.css
+|   |-- main.jsx
+|-- .gitignore
+|-- index.html
+|-- package.json
+|-- README.md
+|-- tailwind.config.js
+|-- vite.config.js
