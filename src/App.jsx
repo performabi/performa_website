@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-// Logo is now referenced via a direct URL, so no local import is needed.
 
 // --- SVG Icons ---
 const ChartBarIcon = ({ className }) => (
@@ -41,11 +40,9 @@ const Header = () => {
   };
 
   const Logo = () => (
-    <img 
-      src="https://i.ibb.co/mD4x7Kq/Performa-New-Logo.png" 
-      alt="Performa BI Logo" 
-      className="h-7"
-    />
+    <div className="text-white font-bold text-2xl tracking-wider uppercase" style={{fontFamily: "'Arial Black', sans-serif"}}>
+      Logo
+    </div>
   );
 
   return (
