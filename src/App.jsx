@@ -8,7 +8,7 @@ const DocumentChartBarIcon = ({ className }) => (
     </svg>
 );
 
-const CpuChipIcon = ({ className }) => (
+const ArrowTrendingUpIcon = ({ className }) => (
     <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5M19.5 8.25h-1.5m-15 3.75h1.5m15 0h1.5m-15 3.75h1.5m15 0h1.5" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z" />
@@ -16,7 +16,7 @@ const CpuChipIcon = ({ className }) => (
     </svg>
 );
 
-const UserGroupIcon = ({ className }) => (
+const BriefcaseIcon = ({ className }) => (
     <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.964A3 3 0 0012 12.75a3 3 0 00-3.75 2.964m6.002-11.85a3 3 0 10-4.5 5.364M12 12.75a3 3 0 00-3.75 2.964m0 0a3 3 0 003.75 2.964m-6.002-11.85a3 3 0 10-4.5 5.364m0 0a3 3 0 004.5 5.364m6.002-11.85a3 3 0 10-4.5 5.364" />
     </svg>
