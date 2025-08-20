@@ -40,13 +40,15 @@ const Header = () => {
     }
   };
 
-  const Logo = () => (
-    <img 
-      src="https://i.ibb.co/mD4x7Kq/Performa-New-Logo.png" 
-      alt="Performa BI Logo" 
-      className="h-7"
-    />
-  );
+import logo from './assets/logo.png'; // This line should be at the top of App.jsx
+
+const Logo = () => (
+  <img 
+    src={logo} // This uses the imported file
+    alt="Performa BI Logo" 
+    className="h-7"
+  />
+);
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0A1929]/80 backdrop-blur-lg border-b border-gray-800' : 'bg-transparent'}`}>
