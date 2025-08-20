@@ -8,7 +8,7 @@ const PresentationChartLineIcon = ({ className }) => (
     </svg>
 );
 
-const CpuChipIcon = ({ className }) => (
+const ArrowTrendingUpIcon = ({ className }) => (
     <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5M19.5 8.25h-1.5m-15 3.75h1.5m15 0h1.5m-15 3.75h1.5m15 0h1.5" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z" />
@@ -16,7 +16,7 @@ const CpuChipIcon = ({ className }) => (
     </svg>
 );
 
-const HandshakeIcon = ({ className }) => (
+const BriefcaseIcon = ({ className }) => (
     <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21.75a9.75 9.75 0 100-19.5 9.75 9.75 0 000 19.5zm-2.25-8.25a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 10.5h.008v.008H9v-.008zm6 0h.008v.008H15v-.008z" />
