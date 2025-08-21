@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-// The local logo import has been removed to use the public folder method.
+// The local logo import has been removed to use the public folder method, which is more reliable for GitHub Pages deployment.
 
 // --- Header Component ---
 const Header = () => {
@@ -175,16 +175,20 @@ const ServicesSection = () => {
 const PortfolioSection = () => {
   const projects = [
     {
-      challenge: 'A UK e-commerce store was struggling with messy sales data from three different platforms.',
-      solution: 'We created a unified sales dashboard in Power BI, automating the data pipeline.',
-      result: '+15% Increase in repeat purchases',
-      imageUrl: 'https://placehold.co/600x400/0A1929/088F8F?text=Dashboard+1',
+      title: "The Unexpected Revenue Gap",
+      client: "UK-Based Engineering Consultancy",
+      challenge: 'Flying blind with revenue forecasts based on spreadsheets and gut-feelings, the founder was stressed about missing their ambitious annual target and making strategic missteps.',
+      solution: 'We implemented a unified Sales Pipeline Dashboard. For the first time, the entire multi-million pound pipeline was visible in one place, broken down by country, division, and consultant.',
+      result: 'Proactive Revenue Management',
+      imageUrl: '/performa_website/Dash1.png',
     },
     {
-      challenge: 'A SaaS startup needed to understand user churn and feature adoption rates.',
-      solution: 'Developed an interactive product analytics dashboard to track user journeys and identify drop-off points.',
-      result: '-25% Reduction in monthly churn',
-      imageUrl: 'https://placehold.co/600x400/0A1929/088F8F?text=Dashboard+2',
+      title: "The Profitable but Cash-Poor Crisis",
+      client: "European Service Company",
+      challenge: 'The business was profitable on paper but constantly struggled with cash flow, especially when managing finances across both GBP and EUR currencies.',
+      solution: 'We developed a powerful Cash Position Dashboard to give the director a consolidated, up-to-the-minute view of the company\'s true liquidity across all accounts.',
+      result: 'Eliminated Financial Anxiety',
+      imageUrl: '/performa_website/Dash2.png',
     },
   ];
 
@@ -199,17 +203,22 @@ const PortfolioSection = () => {
           {projects.map((project, index) => (
             <div key={index} className="grid md:grid-cols-2 gap-12 items-center">
               <div className={index % 2 === 1 ? 'md:order-2' : ''}>
+                <h3 className="text-3xl font-bold text-white mb-2">{project.title}</h3>
+                <p className="text-lg text-gray-400 font-semibold mb-6">{project.client}</p>
+
                 <p className="text-[#088f8f] font-semibold mb-2">The Challenge</p>
                 <p className="text-gray-300 mb-6">{project.challenge}</p>
+                
                 <p className="text-[#088f8f] font-semibold mb-2">The Solution</p>
                 <p className="text-gray-300 mb-6">{project.solution}</p>
+                
                 <div className="bg-[#0D1117] border border-gray-800 rounded-lg p-4 inline-block">
                   <p className="text-white text-xl md:text-2xl font-bold">{project.result}</p>
-                  <p className="text-[#088f8f] text-sm font-semibold">The Result</p>
+                  <p className="text-[#088f8f] text-sm font-semibold">The Outcome</p>
                 </div>
               </div>
               <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                <img src={project.imageUrl} alt="Project Dashboard" className="rounded-lg shadow-2xl w-full" />
+                <img src={project.imageUrl} alt={project.title} className="rounded-lg shadow-2xl w-full" />
               </div>
             </div>
           ))}
