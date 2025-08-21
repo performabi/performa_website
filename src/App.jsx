@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-// The local logo import has been removed to fix the build error.
+// The local logo import has been removed to use the public folder method.
 
 // --- Header Component ---
 const Header = () => {
@@ -22,12 +22,12 @@ const Header = () => {
 
   const Logo = () => (
     <img 
-      src={logo} 
+      src="/performa_website/logo.png" 
       alt="Performa BI Logo" 
       className="h-7"
     />
   );
-  
+
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0A1929]/80 backdrop-blur-lg border-b border-gray-800' : 'bg-transparent'}`}>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -120,21 +120,21 @@ const HeroSection = () => {
 const ServicesSection = () => {
   const services = [
     {
-      icon: <img src="./prod1icon.png" alt="Scorecard Icon" className="h-10 w-10 mb-6" />,
+      icon: <img src="/performa_website/prod1icon.png" alt="Scorecard Icon" className="h-10 w-10 mb-6" />,
       title: 'The Data-Driven Scorecard',
       subtitle: '"Your BI Readiness Assessment"',
       pitch: "Answer a few key questions about your business and receive an instant assessment of your data maturity, highlighting your biggest opportunities for growth.",
       recommended: false,
     },
     {
-      icon: <img src="./prod2icon.png" alt="Growth Engine Icon" className="h-10 w-10 mb-6" />,
+      icon: <img src="/performa_website/prod2icon.png" alt="Growth Engine Icon" className="h-10 w-10 mb-6" />,
       title: 'The Growth Engine',
       subtitle: '"Your Automated Operations Hub"',
       pitch: "Our core solution. We'll build an automated Power BI hub that unifies your key data, giving your team a single source of truth for operational efficiency and strategic foresight.",
       recommended: true,
     },
     {
-      icon: <img src="./prod3icon.png" alt="BI Partner Icon" className="h-10 w-10 mb-6" />,
+      icon: <img src="/performa_website/prod3icon.png" alt="BI Partner Icon" className="h-10 w-10 mb-6" />,
       title: 'The BI Partner',
       subtitle: '"Your Real-Time Decision Centre"',
       pitch: "Make decisions at the speed of your business. We'll build a live decision centre that provides up-to-the-minute insights, giving you a competitive edge.",
