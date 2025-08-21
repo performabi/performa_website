@@ -1,28 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 // The local logo import has been removed to fix the build error.
 
-// --- SVG Icons ---
-const DocumentChartBarIcon = ({ className }) => (
-    <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
-    </svg>
-);
-
-const CpuChipIcon = ({ className }) => (
-    <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5M19.5 8.25h-1.5m-15 3.75h1.5m15 0h1.5m-15 3.75h1.5m15 0h1.5" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-    </svg>
-);
-
-const UserGroupIcon = ({ className }) => (
-    <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.964A3 3 0 0012 12.75a3 3 0 00-3.75 2.964m6.002-11.85a3 3 0 10-4.5 5.364M12 12.75a3 3 0 00-3.75 2.964m0 0a3 3 0 003.75 2.964m-6.002-11.85a3 3 0 10-4.5 5.364m0 0a3 3 0 004.5 5.364m6.002-11.85a3 3 0 10-4.5 5.364" />
-    </svg>
-);
-
-
 // --- Header Component ---
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,7 +22,7 @@ const Header = () => {
 
   const Logo = () => (
     <img 
-      src="./logo.png" 
+      src="https://i.ibb.co/mD4x7Kq/Performa-New-Logo.png" 
       alt="Performa BI Logo" 
       className="h-7"
     />
@@ -142,24 +120,24 @@ const HeroSection = () => {
 const ServicesSection = () => {
   const services = [
     {
-      icon: <DocumentChartBarIcon className="h-10 w-10 text-[#088f8f] mb-6" />,
-      title: 'The Clarity Dashboard',
-      subtitle: '"Your Business Health Check"',
-      pitch: "Go from financial uncertainty to complete clarity. We'll transform your raw numbers into a single, easy-to-understand Business Health Report, giving you the peace of mind and confidence that comes from a clear snapshot of your business.",
+      icon: <img src="./prod1icon.png" alt="Scorecard Icon" className="h-10 w-10 mb-6" />,
+      title: 'The Data-Driven Scorecard',
+      subtitle: '"Your BI Readiness Assessment"',
+      pitch: "Answer a few key questions about your business and receive an instant assessment of your data maturity, highlighting your biggest opportunities for growth.",
       recommended: false,
     },
     {
-      icon: <CpuChipIcon className="h-10 w-10 text-[#088f8f] mb-6" />,
+      icon: <img src="./prod2icon.png" alt="Growth Engine Icon" className="h-10 w-10 mb-6" />,
       title: 'The Growth Engine',
       subtitle: '"Your Automated Operations Hub"',
-      pitch: "Stop wasting hours on manual reports. We'll build an automated Power BI hub that unifies your key data, giving your team a single source of truth for operational efficiency and the strategic foresight to plan ahead.",
+      pitch: "Our core solution. We'll build an automated Power BI hub that unifies your key data, giving your team a single source of truth for operational efficiency and strategic foresight.",
       recommended: true,
     },
     {
-      icon: <UserGroupIcon className="h-10 w-10 text-[#088f8f] mb-6" />,
+      icon: <img src="./prod3icon.png" alt="BI Partner Icon" className="h-10 w-10 mb-6" />,
       title: 'The BI Partner',
       subtitle: '"Your Real-Time Decision Centre"',
-      pitch: "Make decisions at the speed of your business. We'll build a live decision centre that provides up-to-the-minute insights, giving you a competitive edge through speed and proactive problem-solving.",
+      pitch: "Make decisions at the speed of your business. We'll build a live decision centre that provides up-to-the-minute insights, giving you a competitive edge.",
       recommended: false,
     },
   ];
@@ -169,7 +147,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white">Your Blueprint for Data-Driven Success</h2>
-          <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">From a simple health check to a full strategic partnership, we have a solution for your stage of growth.</p>
+          <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">From a simple assessment to a full strategic partnership, we have a solution for your stage of growth.</p>
         </div>
         <div className="grid lg:grid-cols-3 gap-8 items-stretch">
           {services.map((service, index) => (
