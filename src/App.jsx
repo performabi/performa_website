@@ -22,12 +22,12 @@ const Header = () => {
 
   const Logo = () => (
     <img 
-      src="https://i.ibb.co/mD4x7Kq/Performa-New-Logo.png" 
+      src={logo} 
       alt="Performa BI Logo" 
       className="h-7"
     />
   );
-
+  
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0A1929]/80 backdrop-blur-lg border-b border-gray-800' : 'bg-transparent'}`}>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
