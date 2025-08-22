@@ -17,6 +17,14 @@
             padding: 20px;
             box-sizing: border-box;
         }
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .logo {
+            height: 28px;
+        }
         .container {
             max-width: 600px;
             width: 100%;
@@ -25,13 +33,6 @@
             border: 1px solid #30363d;
             border-radius: 12px;
             text-align: center;
-        }
-        .logo-container {
-            text-align: left;
-            margin-bottom: 2rem;
-        }
-        .logo {
-            height: 28px;
         }
         h1 {
             color: #088f8f;
@@ -95,11 +96,11 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="logo-container">
-            <img src="/logo.png" alt="Performa BI Logo" class="logo">
-        </div>
+    <div class="header">
+        <img src="/logo.png" alt="Performa BI Logo" class="logo">
+    </div>
 
+    <div class="container">
         <h1>AI Classifier - JGS</h1>
         <p>Please click on the button below to be redirected to the AI Classifier.</p>
         
