@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Classifier Project - Performa BI</title>
+    <style>
+        body {
+            background-color: #0A1929;
+            color: #e6f1ff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            background-color: #0D1117;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .logo-container {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        .logo {
+            height: 28px;
+        }
+        h1 {
+            color: #088f8f;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #a7b5c4;
+        }
+        .button-group {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .button {
+            display: inline-block;
+            background-color: #088f8f;
+            color: #ffffff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .button:hover {
+            background-color: #086086;
+            transform: scale(1.05);
+        }
+        .button-secondary {
+            background-color: #30363d;
+        }
+        .button-secondary:hover {
+            background-color: #484f58;
+        }
+        #instructions {
+            display: none;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #0A1929;
+            border-radius: 8px;
+            text-align: left;
+            border: 1px solid #30363d;
+        }
+        #instructions p, #instructions li {
+            font-size: 1rem;
+        }
+        #instructions ol {
+            padding-left: 20px;
+        }
+        #instructions strong {
+            color: #e6f1ff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="/performa_website/logo.png" alt="Performa BI Logo" class="logo">
+        </div>
+
+        <h1>AI Classifier - JGS</h1>
+        <p>Please click on the button below to be redirected to the AI Classifier.</p>
+        
+        <div class="button-group">
+            <button class="button button-secondary" onclick="toggleInstructions()">Show Instructions</button>
+            <a href="https://performabi.pythonanywhere.com" target="_blank" rel="noopener noreferrer" class="button">Access AI Classifier</a>
+        </div>
+
+        <div id="instructions">
+            <p><strong>PLEASE NOTE:</strong></p>
+            <p>Loading the AI System may take up to 30 seconds. It will request a login and password to access it. Please request it directly if you didn't receive it.</p>
+            <p>Any queries, please let us know!</p>
+            <br>
+            <p><strong>How to Use the System:</strong></p>
+            <ol>
+                <li>Download the CSV from Starling Bank and MetroBank and load it to the designed field. You can click & browse or drag & drop the file.</li>
+                <li>Then, click the button - "PROCESS FILE".</li>
+                <li>The system may take up to 10 seconds to identify all the transactions, make the best suggestions and load.</li>
+                <li>Please check the suggested categories and store - amend if necessary using the dropdown menu.</li>
+                <li>Download the Classified Report by clicking on Export Classified Data (CSV).</li>
+            </ol>
+            <p><strong>All Done!</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleInstructions() {
+            const instructionsDiv = document.getElementById('instructions');
+            if (instructionsDiv.style.display === 'none' || instructionsDiv.style.display === '') {
+                instructionsDiv.style.display = 'block';
+            } else {
+                instructionsDiv.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>
