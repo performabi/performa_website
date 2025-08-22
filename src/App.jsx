@@ -22,7 +22,7 @@ const Header = () => {
 
   const Logo = () => (
     <img 
-      src="/performa_website/logo.png" 
+      src="/logo.png" 
       alt="Performa BI Logo" 
       className="h-7"
     />
@@ -120,21 +120,21 @@ const HeroSection = () => {
 const ServicesSection = () => {
   const services = [
     {
-      icon: <img src="/performa_website/prod1icon.png" alt="Scorecard Icon" className="h-10 w-10 mb-6" />,
+      icon: <img src="/prod1icon.png" alt="Scorecard Icon" className="h-10 w-10 mb-6" />,
       title: 'The Data-Driven Scorecard',
       subtitle: '"Your BI Readiness Assessment"',
       pitch: "Answer a few key questions about your business and receive an instant assessment of your data maturity, highlighting your biggest opportunities for growth.",
       recommended: false,
     },
     {
-      icon: <img src="/performa_website/prod2icon.png" alt="Growth Engine Icon" className="h-10 w-10 mb-6" />,
+      icon: <img src="/prod2icon.png" alt="Growth Engine Icon" className="h-10 w-10 mb-6" />,
       title: 'The Growth Engine',
       subtitle: '"Your Automated Operations Hub"',
       pitch: "Our core solution. We'll build an automated Power BI hub that unifies your key data, giving your team a single source of truth for operational efficiency and strategic foresight.",
       recommended: true,
     },
     {
-      icon: <img src="/performa_website/prod3icon.png" alt="BI Partner Icon" className="h-10 w-10 mb-6" />,
+      icon: <img src="/prod3icon.png" alt="BI Partner Icon" className="h-10 w-10 mb-6" />,
       title: 'The BI Partner',
       subtitle: '"Your Real-Time Decision Centre"',
       pitch: "Make decisions at the speed of your business. We'll build a live decision centre that provides up-to-the-minute insights, giving you a competitive edge.",
@@ -180,7 +180,7 @@ const PortfolioSection = () => {
       challenge: 'Flying blind with revenue forecasts based on spreadsheets and gut-feelings, the founder was stressed about missing their ambitious annual target and making strategic missteps.',
       solution: 'We implemented a unified Sales Pipeline Dashboard. For the first time, the entire multi-million pound pipeline was visible in one place, broken down by country, division, and consultant.',
       result: 'Proactive Revenue Management',
-      imageUrl: '/performa_website/Dash1.png',
+      imageUrl: '/Dash1.png',
     },
     {
       title: "The Profitable but Cash-Poor Crisis",
@@ -188,7 +188,7 @@ const PortfolioSection = () => {
       challenge: 'The business was profitable on paper but constantly struggled with cash flow, especially when managing finances across both GBP and EUR currencies.',
       solution: 'We developed a powerful Cash Position Dashboard to give the director a consolidated, up-to-the-minute view of the company\'s true liquidity across all accounts.',
       result: 'Eliminated Financial Anxiety',
-      imageUrl: '/performa_website/Dash2.png',
+      imageUrl: '/Dash2.png',
     },
   ];
 
