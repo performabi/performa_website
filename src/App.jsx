@@ -3,6 +3,7 @@ import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage';
 import AIClassifierPage from './pages/AIClassifierPage';
 import BiHealthCheckPage from './pages/BiHealthCheckPage';
+import PortfolioPage from './pages/PortfolioPage'; // 1. Import the new page
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="/ai-classifier" element={<AIClassifierPage />} />
           <Route path="/bihealthcheck" element={<BiHealthCheckPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} /> {/* 2. Add the new route */}
         </Route>
       </Routes>
     </BrowserRouter>
