@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage';
-// Import the page components so the router can use them
-import AiClassifierPage from './pages/AiClassifierPage';
+// Ensure the import statements match the filenames exactly
+import AIClassifierPage from './pages/AIClassifierPage';
 import BiHealthCheckPage from './pages/BiHealthCheckPage';
 
 function App() {
@@ -10,11 +10,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          {/* The index route is the default page for the parent route "/" */}
           <Route index element={<HomePage />} />
-          
-          {/* Add routes for your other pages here */}
-          <Route path="ai-classifier" element={<AiClassifierPage />} />
+          <Route path="ai-classifier" element={<AIClassifierPage />} />
           <Route path="bihealthcheck" element={<BiHealthCheckPage />} />
         </Route>
       </Routes>
@@ -23,4 +20,3 @@ function App() {
 }
 
 export default App;
-
