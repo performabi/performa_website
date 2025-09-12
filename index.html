@@ -5,6 +5,17 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Performa BI - Stop Guessing. Start Growing.</title>
+<script type="text/javascript">
+  (function() {
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect != window.location.pathname) {
+      // Use the History API to change the URL back to the intended one
+      // without reloading the page.
+      history.replaceState(null, null, redirect);
+    }
+  })();
+</script>
   </head>
   <body>
     <div id="root"></div>
