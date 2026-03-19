@@ -57,7 +57,7 @@ const HeroSection = () => {
         <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in-up">
           We transform your scattered business data into a clear, actionable roadmap, empowering you to make intelligent decisions and drive predictable growth.
         </p>
-        <a href="https://calendar.app.google/QoA7M3QwtSBQAPtu5" target="_blank" rel="noopener noreferrer" className="bg-[#088f8f] hover:bg-[#086086] text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 animate-fade-in-up animation-delay-300 inline-block">
+        <a href="https://calendar.app.google/GY63Q6ifdmtxVemeA" target="_blank" rel="noopener noreferrer" className="bg-[#088f8f] hover:bg-[#086086] text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 animate-fade-in-up animation-delay-300 inline-block">
           Book a Free Discovery Call
         </a>
       </div>
