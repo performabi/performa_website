@@ -42,7 +42,7 @@ const Header = () => {
               {item}
             </button>
           ))}
-          <a href="https://calendar.app.google/QoA7M3QwtSBQAPtu5" target="_blank" rel="noopener noreferrer" className="bg-[#088f8f] hover:bg-[#086086] text-white font-semibold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105">
+          <a href="https://calendar.app.google/GY63Q6ifdmtxVemeA" target="_blank" rel="noopener noreferrer" className="bg-[#088f8f] hover:bg-[#086086] text-white font-semibold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105">
             Book a Call
           </a>
         </nav>
