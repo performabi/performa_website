@@ -1,5 +1,6 @@
 {
   "name": "performabi-website",
+  "homepage": "[https://www.performabi.com](https://www.performabi.com)",
   "private": true,
   "version": "0.0.0",
   "type": "module",
