@@ -6,3 +6,8 @@
 
 # Environment variables
 .env
+
+# Nexus internal vision files
+nexus_vision_concept.html
+nexus_vision_report.md
+Nexus_vision_structure.md
