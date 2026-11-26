@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 // ── Fonts injected once ──────────────────────────────────────────────────────
 const NexusFonts = () => {
@@ -60,8 +61,7 @@ const SectionDivider = () => (
 );
 
 // ── Intro Screen: NEXUS Title with green scroll indicator ────────────────────
-const NexusHeroIntro = ({ progress }) => {
-  // Title fades and scales gently as user scrolls down to bring the content into view
+const NexusHeroIntro = ({ progress, t }) => {
   const opacity = Math.max(0, 1 - progress * 1.5);
   const translateY = -progress * 80;
   const scale = 1 - progress * 0.08;
@@ -86,7 +86,6 @@ const NexusHeroIntro = ({ progress }) => {
       }}
     >
       <div style={{ textAlign: 'center', padding: '0 1.5rem' }}>
-        {/* Subtle tag */}
         <span
           style={{
             fontFamily: mono,
@@ -99,10 +98,9 @@ const NexusHeroIntro = ({ progress }) => {
             fontWeight: 500,
           }}
         >
-          Executive Intelligence
+          {t('nx_hero_tag')}
         </span>
 
-        {/* Minimalist Nexus typography */}
         <h1
           style={{
             fontFamily: serif,
@@ -130,10 +128,9 @@ const NexusHeroIntro = ({ progress }) => {
             lineHeight: 1.6,
           }}
         >
-          A corrective lens for executive leadership.
+          {t('nx_hero_sub')}
         </p>
 
-        {/* Scroll down in green indicator */}
         <div
           style={{
             display: 'inline-flex',
@@ -152,7 +149,7 @@ const NexusHeroIntro = ({ progress }) => {
               fontWeight: 600,
             }}
           >
-            Scroll Down
+            {t('nx_scroll_down')}
           </span>
           <div
             style={{
@@ -169,64 +166,62 @@ const NexusHeroIntro = ({ progress }) => {
 };
 
 // ── Multi-Layer Architecture Diagram (3 Columns, Top-to-Bottom Flow) ─────────
-// Clean solutions-focused architecture without specific tool names.
-// Designed with generous card padding and viewBox so text never overflows quadrant lines.
-const ArchDiagram = () => {
+const ArchDiagram = ({ t }) => {
   const layers = [
     {
-      stage: 'Level 01',
-      title: 'Data Ingestion Layer',
-      desc: 'Automated retrieval from company operational databases with read-only protocols.',
+      stage: t('nx_l1_stage'),
+      title: t('nx_l1_title'),
+      desc: t('nx_l1_desc'),
       items: [
         {
-          title: 'Internal ERP Extractions',
-          detail: 'Scheduled automated extraction of transactional records, purchase orders, and sales activity.',
+          title: t('nx_l1_i1_t'),
+          detail: t('nx_l1_i1_d'),
         },
         {
-          title: 'Secure Local Storage',
-          detail: 'Encrypted storage repository hosted directly on internal enterprise servers.',
+          title: t('nx_l1_i2_t'),
+          detail: t('nx_l1_i2_d'),
         },
         {
-          title: 'Zero Cloud Transmission',
-          detail: 'Raw business records never leave the local network boundary, preserving complete secrecy.',
+          title: t('nx_l1_i3_t'),
+          detail: t('nx_l1_i3_d'),
         },
       ],
     },
     {
-      stage: 'Level 02',
-      title: 'Audit & Intelligence Core',
-      desc: 'Deterministic mathematical verification coupled with customized autonomous synthesis.',
+      stage: t('nx_l2_stage'),
+      title: t('nx_l2_title'),
+      desc: t('nx_l2_desc'),
       items: [
         {
-          title: 'Algorithmic Data Audit',
-          detail: 'Rigorous validation checking for zero-cost anomalies, margin distortions, and pipeline bottlenecks.',
+          title: t('nx_l2_i1_t'),
+          detail: t('nx_l2_i1_d'),
         },
         {
-          title: 'On-Premise AI Synthesis',
-          detail: 'Local intelligence engine synthesizing mathematical truths into plain-language business insights.',
+          title: t('nx_l2_i2_t'),
+          detail: t('nx_l2_i2_d'),
         },
         {
-          title: 'Strategic Directive Alignment',
-          detail: 'Executive parameters calibrated to board targets: cash flow protection, margin defense, or expansion.',
+          title: t('nx_l2_i3_t'),
+          detail: t('nx_l2_i3_d'),
         },
       ],
     },
     {
-      stage: 'Level 03',
-      title: 'Executive Distribution',
-      desc: 'Actionable executive read delivered directly to leadership with named operational ownership.',
+      stage: t('nx_l3_stage'),
+      title: t('nx_l3_title'),
+      desc: t('nx_l3_desc'),
       items: [
         {
-          title: 'Editorial Executive Report',
-          detail: 'Clear narrative brief identifying revenue opportunities, margin variances, and cash timing.',
+          title: t('nx_l3_i1_t'),
+          detail: t('nx_l3_i1_d'),
         },
         {
-          title: 'Accountability Assignment',
-          detail: 'Every operational gap is paired with financial exposure and an assigned departmental owner.',
+          title: t('nx_l3_i2_t'),
+          detail: t('nx_l3_i2_d'),
         },
         {
-          title: 'Weekly Board Delivery',
-          detail: 'Confidential digital brief delivered directly to directors to align weekly decision-making.',
+          title: t('nx_l3_i3_t'),
+          detail: t('nx_l3_i3_d'),
         },
       ],
     },
@@ -300,7 +295,6 @@ const ArchDiagram = () => {
                   transition: 'border-color 0.25s, transform 0.25s',
                 }}
               >
-                {/* Accent indicator */}
                 <div
                   style={{
                     width: '1.75rem',
@@ -445,6 +439,7 @@ const GovCard = ({ icon, title, strong, body }) => {
 // ── Main Page ─────────────────────────────────────────────────────────────────
 export default function NexusPage() {
   const [scrollY, setScrollY] = useState(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -462,7 +457,7 @@ export default function NexusPage() {
       <NexusFonts />
 
       {/* Hero Intro overlay with NEXUS title and green scroll indicator */}
-      <NexusHeroIntro progress={progress} />
+      <NexusHeroIntro progress={progress} t={t} />
 
       {/* Content layer */}
       <div style={{
@@ -478,14 +473,14 @@ export default function NexusPage() {
         {/* ── CONTEXT ──────────────────────────────────────── */}
         <section id="nx-context" style={{ padding: '5rem 1.5rem 7rem', maxWidth: '80rem', margin: '0 auto' }}>
           <div style={{ maxWidth: '56rem' }}>
-            <Label>The Lack of Focus</Label>
+            <Label>{t('nx_ctx_tag')}</Label>
             <h2 style={{
               fontFamily: serif, fontWeight: 500,
               fontSize: 'clamp(2.25rem, 5vw, 4.25rem)', lineHeight: 1.1,
               marginBottom: '1.5rem', color: C.text,
             }}>
-              Your company kept moving.<br />
-              <span style={{ color: C.muted, fontStyle: 'italic' }}>But the vision got blurry.</span>
+              {t('nx_ctx_title_1')}<br />
+              <span style={{ color: C.muted, fontStyle: 'italic' }}>{t('nx_ctx_title_2')}</span>
             </h2>
             <div style={{
               display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px,1fr))',
@@ -497,10 +492,10 @@ export default function NexusPage() {
                 borderLeft: `2px solid ${C.teal}`,
                 paddingLeft: '1.25rem',
               }}>
-                As operations scale, management keeps walking but loses the clarity needed to react to obstacles in time. Numbers exist, but arrive late. The global margin masks local losses.
+                {t('nx_ctx_p1')}
               </p>
               <p style={{ fontSize: '1.0625rem', color: C.muted, fontWeight: 300, lineHeight: 1.8 }}>
-                Executive meetings turn into debates about which spreadsheet is correct. Revenue sits trapped in dispatch, silently. The symptom is not a lack of data. It is a lack of <em>focus</em>.
+                {t('nx_ctx_p2')}
               </p>
             </div>
           </div>
@@ -523,29 +518,29 @@ export default function NexusPage() {
 
           <div style={{ maxWidth: '80rem', margin: '0 auto', position: 'relative', zIndex: 1 }}>
             <div style={{ marginBottom: '4.5rem', maxWidth: '48rem' }}>
-              <Label>The Corrective Lens</Label>
+              <Label>{t('nx_lens_tag')}</Label>
               <h2 style={{ fontFamily: serif, fontWeight: 500, fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.2, marginBottom: '1.25rem', color: C.text }}>
-                Nexus does not replace your ERP.<br />It is the corrective layer above it.
+                {t('nx_lens_title_1')}<br />{t('nx_lens_title_2')}
               </h2>
               <p style={{ color: C.muted, fontWeight: 300, fontSize: '1.0625rem', lineHeight: 1.75 }}>
-                Nexus operates in parallel. It reads your ERP outputs, purifies mathematical anomalies, and delivers a clear executive narrative without manual consolidation.
+                {t('nx_lens_sub')}
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px,1fr))', gap: '2rem' }}>
               <PillarCard
-                num="01. Cash Synchrony"
-                title="Synchrony protects liquidity."
-                body="The gap between production and dispatch retains billing in the pipeline. Nexus focuses on that bottleneck, turning finished parts into immediate revenue by pinpointing exactly where the order stalled."
+                num={t('nx_p1_num')}
+                title={t('nx_p1_title')}
+                body={t('nx_p1_body')}
               />
               <PillarCard
-                num="02. Margin Defence"
-                title="Margin has a signature."
-                body="Evaluating profitability against a generic target disguises losses in volume. We break down focus by channel — Wholesale vs. Retail — revealing the real impact of discounts granted."
+                num={t('nx_p2_num')}
+                title={t('nx_p2_title')}
+                body={t('nx_p2_body')}
               />
               <PillarCard
-                num="03. Direct Execution"
-                title="Information demands action."
-                body="A passive dashboard produces no result. Nexus readings arrive with clear evidence, financial impact, and a named responsible leader assigned for immediate correction."
+                num={t('nx_p3_num')}
+                title={t('nx_p3_title')}
+                body={t('nx_p3_body')}
               />
             </div>
           </div>
@@ -558,12 +553,12 @@ export default function NexusPage() {
         }}>
           <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-              <Label>System Architecture</Label>
+              <Label>{t('nx_arch_tag')}</Label>
               <h2 style={{ fontFamily: serif, fontWeight: 500, fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.2, color: C.text }}>
-                How Nexus fits inside your business.
+                {t('nx_arch_title')}
               </h2>
               <p style={{ color: C.muted, fontWeight: 300, fontSize: '1rem', lineHeight: 1.7, maxWidth: '36rem', margin: '1rem auto 0' }}>
-                An isolated, on-premise pipeline. Your ERP data never leaves your network. The AI agent runs locally and writes deterministic, board-ready narratives.
+                {t('nx_arch_sub')}
               </p>
               <SectionDivider />
             </div>
@@ -575,7 +570,7 @@ export default function NexusPage() {
               borderRadius: '12px',
               padding: '2.5rem 2rem',
             }}>
-              <ArchDiagram />
+              <ArchDiagram t={t} />
             </div>
           </div>
         </section>
@@ -588,33 +583,33 @@ export default function NexusPage() {
         }}>
           <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
-              <Label>Clarity and Governance</Label>
+              <Label>{t('nx_gov_tag')}</Label>
               <h2 style={{ fontFamily: serif, fontWeight: 500, fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', lineHeight: 1.2, color: C.text, marginBottom: '1rem' }}>
-                Breaking Operational Barriers.
+                {t('nx_gov_title')}
               </h2>
               <p style={{ color: C.muted, fontWeight: 300, fontSize: '1.0625rem', lineHeight: 1.7, maxWidth: '40rem', margin: '0 auto' }}>
-                Nexus implementation is designed to eliminate friction. We address the board's natural concerns before adopting a new intelligence layer.
+                {t('nx_gov_sub')}
               </p>
               <SectionDivider />
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px,1fr))', gap: '2rem' }}>
               <GovCard
                 icon={<><circle cx="12" cy="12" r="3"/><path d="M2 12h3M19 12h3M12 2v3M12 19v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></>}
-                title="Will it burden the IT team?"
-                strong="Zero technical friction."
-                body="Implementation requires only read access to ERP exports. No system interruptions, no complex integrations, and no active support from your technology team."
+                title={t('nx_gov1_title')}
+                strong={t('nx_gov1_strong')}
+                body={t('nx_gov1_body')}
               />
               <GovCard
                 icon={<><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></>}
-                title="What if the data is flawed?"
-                strong="Automated auditing."
-                body="Nexus acts as a rigorous quality filter. Products registered with zero cost or mathematically impossible margins are flagged and reported as anomalies before they reach the board."
+                title={t('nx_gov2_title')}
+                strong={t('nx_gov2_strong')}
+                body={t('nx_gov2_body')}
               />
               <GovCard
                 icon={<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></>}
-                title="Does it replace the commercial team?"
-                strong="It amplifies leadership."
-                body="Nexus eliminates the manual work of building spreadsheets, returning time for your leaders to focus strictly on strategy and business management."
+                title={t('nx_gov3_title')}
+                strong={t('nx_gov3_strong')}
+                body={t('nx_gov3_body')}
               />
             </div>
           </div>
@@ -638,7 +633,6 @@ export default function NexusPage() {
           }} aria-hidden="true" />
 
           <div style={{ maxWidth: '44rem', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-            {/* Nexus eye icon — SVG, no emoji */}
             <div style={{
               width: '4rem', height: '4rem', borderRadius: '50%',
               background: 'rgba(8,143,143,0.1)',
@@ -658,10 +652,10 @@ export default function NexusPage() {
               fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.2,
               color: C.text, marginBottom: '1.5rem',
             }}>
-              Restore your board's focus.
+              {t('nx_cta_title')}
             </h2>
             <p style={{ color: C.muted, fontWeight: 300, fontSize: '1rem', lineHeight: 1.75, marginBottom: '3rem' }}>
-              Stop wasting time debating the validity of spreadsheets. Start executing decisions based on clean, irrefutable narratives guided by local intelligence.
+              {t('nx_cta_sub')}
             </p>
             <a
               href="mailto:contato@performabi.com?subject=Nexus%20-%20Executive%20Diagnostic"
@@ -688,7 +682,7 @@ export default function NexusPage() {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              <span>Schedule Executive Diagnostic</span>
+              <span>{t('nx_cta_btn')}</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
@@ -707,8 +701,8 @@ export default function NexusPage() {
             maxWidth: '80rem', margin: '6rem auto 0',
             gap: '1rem',
           }}>
-            <p>Copyright {new Date().getFullYear()} Performa BI. Nexus is a proprietary technology.</p>
-            <p style={{ opacity: 0.5 }}>Local AI Agent. Enterprise Ready.</p>
+            <p>Copyright {new Date().getFullYear()} {t('nx_footer_copy')}</p>
+            <p style={{ opacity: 0.5 }}>{t('nx_footer_local')}</p>
           </div>
         </footer>
       </div>

@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-
-const instructions = [
-  'Download the CSV from Starling Bank and MetroBank and load it to the designed field. You can click & browse or drag & drop the file.',
-  'Then, click the button — "PROCESS FILE".',
-  'The system may take up to 10 seconds to identify all the transactions, make the best suggestions and load.',
-  'Please check the suggested categories and amend if necessary using the dropdown menu.',
-  'Download the Classified Report by clicking on Export Classified Data (CSV).',
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const AiClassifierPage = () => {
   const [showInstructions, setShowInstructions] = useState(false);
+  const { t } = useLanguage();
+
+  const instructions = [
+    t('ai_step_1'),
+    t('ai_step_2'),
+    t('ai_step_3'),
+    t('ai_step_4'),
+    t('ai_step_5'),
+  ];
 
   return (
     <div className="min-h-[calc(100vh-140px)] flex flex-col items-center justify-center bg-[#0A1929] p-6">
@@ -23,9 +25,9 @@ const AiClassifierPage = () => {
         }}
       >
         <div className="w-12 h-0.5 mx-auto mb-6 rounded-full" style={{ background: 'linear-gradient(90deg, #088f8f, #086086)' }} />
-        <h1 className="text-4xl md:text-5xl font-bold mb-3" style={{ color: '#088f8f' }}>AI Classifier</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-3" style={{ color: '#088f8f' }}>{t('ai_title')}</h1>
         <p className="text-gray-400 mb-8 leading-relaxed">
-          Click below to access the AI Classifier tool. Loading may take up to 30 seconds on first launch.
+          {t('ai_sub')}
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
@@ -37,7 +39,7 @@ const AiClassifierPage = () => {
               border: '1px solid rgba(255,255,255,0.1)',
             }}
           >
-            {showInstructions ? 'Hide Instructions' : 'Show Instructions'}
+            {showInstructions ? t('ai_btn_hide') : t('ai_btn_show')}
           </button>
           <a
             href="https://performabi.pythonanywhere.com/"
@@ -49,7 +51,7 @@ const AiClassifierPage = () => {
               boxShadow: '0 4px 16px rgba(8,143,143,0.4)',
             }}
           >
-            Access AI Classifier →
+            {t('ai_btn_access')}
           </a>
         </div>
 
@@ -61,11 +63,11 @@ const AiClassifierPage = () => {
               border: '1px solid rgba(8,143,143,0.15)',
             }}
           >
-            <p className="text-xs uppercase tracking-widest text-[#088f8f] font-bold mb-3">Please Note</p>
+            <p className="text-xs uppercase tracking-widest text-[#088f8f] font-bold mb-3">{t('ai_note_tag')}</p>
             <p className="text-gray-400 mb-5 leading-relaxed">
-              Loading the AI System may take up to 30 seconds. It will request a login and password — please get in touch if you haven't received yours.
+              {t('ai_note_text')}
             </p>
-            <p className="text-xs uppercase tracking-widest text-[#088f8f] font-bold mb-3">How to Use</p>
+            <p className="text-xs uppercase tracking-widest text-[#088f8f] font-bold mb-3">{t('ai_how_to')}</p>
             <ol className="space-y-2">
               {instructions.map((step, i) => (
                 <li key={i} className="flex gap-3 text-gray-400 leading-relaxed">
@@ -74,7 +76,7 @@ const AiClassifierPage = () => {
                 </li>
               ))}
             </ol>
-            <p className="font-bold text-white mt-4">All Done!</p>
+            <p className="font-bold text-white mt-4">{t('ai_done')}</p>
           </div>
         )}
       </div>

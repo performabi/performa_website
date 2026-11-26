@@ -1,33 +1,36 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const BiHealthCheckPage = () => {
+  const { t } = useLanguage();
+
   const scoreItems = [
     {
-      title: 'Your BI Maturity Score',
-      desc: 'Receive a clear score from 1–100 to benchmark your current data capabilities against our proven framework.',
+      title: t('bhc_score_1_t'),
+      desc: t('bhc_score_1_d'),
     },
     {
-      title: 'Your Business Archetype',
-      desc: "Discover if you're a Data Mapper, Navigator, or Strategist, and what that means for your immediate next steps.",
+      title: t('bhc_score_2_t'),
+      desc: t('bhc_score_2_d'),
     },
     {
-      title: 'Actionable Recommendations',
-      desc: 'Get a detailed analysis of your reporting, decision-making, and strategy, with tailored advice to help you scale.',
+      title: t('bhc_score_3_t'),
+      desc: t('bhc_score_3_d'),
     },
   ];
 
   const steps = [
     {
-      label: 'Take the 5-Min Assessment',
-      desc: 'Fill out the simple, confidential form about your current data processes and biggest challenges.',
+      label: t('bhc_step_1_t'),
+      desc: t('bhc_step_1_d'),
     },
     {
-      label: 'Automated Analysis',
-      desc: 'Our system instantly analyses your answers against our BI Maturity Framework and generates your report.',
+      label: t('bhc_step_2_t'),
+      desc: t('bhc_step_2_d'),
     },
     {
-      label: 'Receive Your PDF Report',
-      desc: 'Your personalised PDF report is delivered directly to your inbox within minutes.',
+      label: t('bhc_step_3_t'),
+      desc: t('bhc_step_3_d'),
     },
   ];
 
@@ -44,9 +47,9 @@ const BiHealthCheckPage = () => {
           aria-hidden="true"
         />
         <div className="relative container mx-auto px-6">
-          <span className="inline-block text-sm uppercase tracking-widest text-[#088f8f] font-semibold mb-4">Free Assessment</span>
+          <span className="inline-block text-sm uppercase tracking-widest text-[#088f8f] font-semibold mb-4">{t('bhc_hero_tag')}</span>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white mb-4">
-            How Data-Driven is Your Business,{' '}
+            {t('bhc_hero_title_1')}{' '}
             <span
               style={{
                 background: 'linear-gradient(135deg, #088f8f 0%, #0eb8b8 50%, #086086 100%)',
@@ -55,11 +58,11 @@ const BiHealthCheckPage = () => {
                 backgroundClip: 'text',
               }}
             >
-              Really?
+              {t('bhc_hero_title_2')}
             </span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Stop guessing. In 5 minutes, get a free, personalised PDF report detailing your company's data maturity, hidden risks, and biggest opportunities for growth.
+            {t('bhc_hero_sub')}
           </p>
           <a
             href="https://forms.gle/49qK6UmCznx8WxK5A"
@@ -71,9 +74,9 @@ const BiHealthCheckPage = () => {
               boxShadow: '0 4px 24px rgba(8,143,143,0.4)',
             }}
           >
-            Start Your Free BI Health Check →
+            {t('bhc_hero_cta')}
           </a>
-          <p className="text-sm text-gray-500 mt-4">Free for a limited time. No credit card required.</p>
+          <p className="text-sm text-gray-500 mt-4">{t('bhc_hero_disclaimer')}</p>
         </div>
       </section>
 
@@ -87,8 +90,8 @@ const BiHealthCheckPage = () => {
           aria-hidden="true"
         />
         <div className="relative container mx-auto px-6 text-center">
-          <span className="inline-block text-sm uppercase tracking-widest text-[#088f8f] font-semibold mb-3">What's Included</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Your Personalised BI Scorecard Includes:</h2>
+          <span className="inline-block text-sm uppercase tracking-widest text-[#088f8f] font-semibold mb-3">{t('bhc_inc_tag')}</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">{t('bhc_inc_title')}</h2>
           <div className="mt-6 mb-12 mx-auto w-16 h-0.5 rounded-full" style={{ background: 'linear-gradient(90deg, transparent, #088f8f, transparent)' }} />
           <div className="grid md:grid-cols-3 gap-8">
             {scoreItems.map((item, i) => (
@@ -115,9 +118,9 @@ const BiHealthCheckPage = () => {
       <section className="py-20 bg-[#0A1929]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="inline-block text-sm uppercase tracking-widest text-[#088f8f] font-semibold mb-3">Simple Process</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white">Get Your Report in 3 Simple Steps</h2>
-            <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">Our automated system does the hard work for you.</p>
+            <span className="inline-block text-sm uppercase tracking-widest text-[#088f8f] font-semibold mb-3">{t('bhc_proc_tag')}</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">{t('bhc_proc_title')}</h2>
+            <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">{t('bhc_proc_sub')}</p>
             <div className="mt-6 mx-auto w-16 h-0.5 rounded-full" style={{ background: 'linear-gradient(90deg, transparent, #088f8f, transparent)' }} />
           </div>
           <div className="max-w-2xl mx-auto space-y-6">
@@ -166,9 +169,9 @@ const BiHealthCheckPage = () => {
               style={{ background: 'radial-gradient(circle, rgba(8,143,143,0.3) 0%, transparent 70%)', filter: 'blur(40px)' }}
               aria-hidden="true"
             />
-            <h2 className="relative text-3xl md:text-5xl font-bold text-white mb-4">Ready to Unlock Your Business's Data Potential?</h2>
+            <h2 className="relative text-3xl md:text-5xl font-bold text-white mb-4">{t('bhc_cta_title')}</h2>
             <p className="relative text-lg text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Your personalised data strategy roadmap is just a few clicks away. Move from gut-feel to data-driven confidence.
+              {t('bhc_cta_sub')}
             </p>
             <a
               href="https://forms.gle/49qK6UmCznx8WxK5A"
@@ -177,7 +180,7 @@ const BiHealthCheckPage = () => {
               className="relative inline-flex items-center gap-2 bg-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105"
               style={{ color: '#086086', boxShadow: '0 4px 24px rgba(0,0,0,0.3)' }}
             >
-              Get My Free BI Health Check Report →
+              {t('bhc_cta_btn')}
             </a>
           </div>
         </div>

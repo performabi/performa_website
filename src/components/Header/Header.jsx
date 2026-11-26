@@ -197,7 +197,7 @@ const Header = () => {
 
             {/* Book a Call CTA button */}
             <a
-              href="https://calendar.app.google/QoA7M3QwtSBQAPtu5"
+              href="https://calendar.app.google/GY63Q6ifdmtxVemeA"
               target="_blank"
               rel="noopener noreferrer"
               className="relative group inline-flex items-center gap-1.5 font-semibold py-2 px-4 md:px-5 rounded-lg text-xs md:text-sm transition-all duration-300 transform hover:scale-105 text-white overflow-hidden shadow-lg"
