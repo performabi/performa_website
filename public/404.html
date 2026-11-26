@@ -4,14 +4,8 @@
       <meta charset="utf-8">
       <title>Performa BI - Redirecting...</title>
       <script type="text/javascript">
-        // Get the full path that the user tried to access
         var path = window.location.pathname;
-
-        // Store this path in the browser's session storage
         sessionStorage.redirect = path;
-
-        // Redirect the browser to the root of the domain using the full origin
-        // to ensure it's always a valid URL.
         window.location.href = window.location.origin;
       </script>
     </head>

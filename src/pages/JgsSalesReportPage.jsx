@@ -1,6 +1,6 @@
 import React from 'react';
 
-const REPORT_URL = 'https://app.powerbi.com/view?r=eyJrIjoiZWEyODkzY2QtZDA5ZS00YTdhLWJiZTItYzJhZTY0YjBkY2Q2IiwidCI6IjJiNmMxMWI3LWU5OTUtNDIzZC1iNzQ4LTllM2Q5Y2U3MDVkYiJ9';
+const REPORT_URL = 'https://app.powerbi.com/view?r=eyJrIjoiMGQ2NDA5OTEtMzM5YS00MDA5LWJmMjctMTQ1NmYxZjNiZWQ3IiwidCI6IjJiNmMxMWI3LWU5OTUtNDIzZC1iNzQ4LTllM2Q5Y2U3MDVkYiJ9';
 
 const JgsSalesReportPage = () => (
   <div className="bg-[#0A1929] text-gray-200 py-20">
